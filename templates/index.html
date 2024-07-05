@@ -1,6 +1,45 @@
-{% extends 'base.html' %}
-{% block content %}
-<h1>Welcome to QuizMaster</h1>
-<p>Test your knowledge, challenge your friends!</p>
-{% endblock %}
+{% extends "base.html" %}
 
+{% block content %}
+<div class="jumbotron text-center bg-primary text-white">
+    <div class="container">
+        <h1 class="display-4">Welcome to QuizMaster</h1>
+        <p class="lead">Test your knowledge with our fun and challenging quizzes!</p>
+        <a href="{{ url_for('register') }}" class="btn btn-light btn-lg">Get Started</a>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <img src="https://via.placeholder.com/350x150" class="card-img-top" alt="Quiz Image">
+                <div class="card-body">
+                    <h5 class="card-title">Featured Quiz</h5>
+                    <p class="card-text">Check out our featured quiz and test your knowledge.</p>
+                    <a href="{{ url_for('quiz') }}" class="btn btn-primary">Take Quiz</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <img src="https://via.placeholder.com/350x150" class="card-img-top" alt="Quiz Image">
+                <div class="card-body">
+                    <h5 class="card-title">Popular Quiz</h5>
+                    <p class="card-text">Join others in taking our most popular quiz.</p>
+                    <a href="{{ url_for('quiz') }}" class="btn btn-primary">Take Quiz</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <img src="https://via.placeholder.com/350x150" class="card-img-top" alt="Quiz Image">
+                <div class="card-body">
+                    <h5 class="card-title">New Quiz</h5>
+                    <p class="card-text">Try our latest quiz and see how you stack up.</p>
+                    <a href="{{ url_for('quiz') }}" class="btn btn-primary">Take Quiz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

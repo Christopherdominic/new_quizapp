@@ -1,99 +1,61 @@
-/* Reset default margin and padding */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* styles.css */
 
-/* Body styles */
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f0f0f0;
-    padding: 20px;
+    background-color: #f8f9fa;
 }
 
-/* Header styles */
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
+.navbar {
+    background-color: #007bff;
 }
 
-/* Container styles */
+.navbar-brand, .nav-link {
+    color: #fff !important;
+}
+
+.nav-link:hover {
+    background-color: #0056b3;
+    border-radius: 5px;
+}
+
 .container {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Form styles */
-form {
-    margin-bottom: 20px;
-}
-
-form label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-form input[type="text"],
-form input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-form button {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 4px;
-}
-
-form button:hover {
-    background-color: #555;
-}
-
-/* Flash messages */
-.flash {
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 4px;
-}
-
-.flash-success {
-    background-color: #4CAF50;
-    color: white;
-}
-
-.flash-error {
-    background-color: #f44336;
-    color: white;
-}
-
-/* Footer styles */
-footer {
-    text-align: center;
     margin-top: 20px;
-    padding: 10px;
-    background-color: #333;
-    color: #fff;
 }
 
-/* Responsive design */
-@media (max-width: 600px) {
-    .container {
-        padding: 10px;
-    }
+.jumbotron {
+    padding: 4rem 2rem;
+    border-radius: 10px;
 }
 
+.card {
+    border: none;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #000;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-title {
+    color: #007bff;
+}
+
+.form-control {
+    border-radius: 0.25rem;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.img-fluid {
+    margin-top: 20px;
+    border-radius: 10px;
+}
