@@ -1,27 +1,24 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="row">
+<div class="row justify-content-center">
     <div class="col-md-6">
-        <h2>Register</h2>
-        <form action="{{ url_for('register') }}" method="post">
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" class="form-control" id="username" name="username" required>
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">Register</h2>
+                <form action="{{ url_for('register') }}" method="post">
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </form>
             </div>
-            <div class="form-group">
-                <label for="email">Email address</label>
-                <input type="email" class="form-control" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" name="password" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Register</button>
-        </form>
-    </div>
-    <div class="col-md-6">
-        <img src="https://via.placeholder.com/400x300" class="img-fluid" alt="...">
+        </div>
     </div>
 </div>
 {% endblock %}

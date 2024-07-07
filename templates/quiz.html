@@ -1,7 +1,44 @@
-{% extends 'base.html' %}
-{% block content %}
-<h1>Quiz</h1>
-<div id="quiz-container"></div>
-<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
-{% endblock %}
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Quiz</h1>
+        
+        <!-- Display the result if it exists -->
+        {% if result %}
+        <div class="alert alert-info" role="alert">
+            {{ result }}
+        </div>
+        {% endif %}
+        
+        <form method="post" action="{{ url_for('submit_quiz') }}">
+            {% for question in questions %}
+            <div class="card my-3">
+                <div class="card-body">
+                    <h5 class="card-title">{{ question.question|safe }}</h5>
+                    <div class="form-group">
+                        {% set options = question.incorrect_answers + [question.correct_answer] %}
+                        {% for option in options|randomize %}
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="question{{ loop.index }}" value="{{ option }}">
+                            <label class="form-check-label" for="question{{ loop.index }}">{{ option }}</label>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

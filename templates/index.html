@@ -1,45 +1,51 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="jumbotron text-center bg-primary text-white">
-    <div class="container">
-        <h1 class="display-4">Welcome to QuizMaster</h1>
+<!-- Cover Section -->
+<div class="cover text-center">
+    <img src="{{ url_for('static', filename='images/quizimage.jpg') }}" alt="Cover Image" class="cover-img">
+    <div class="cover-text">
+        <h1 class="display-4">QuizMaster</h1>
         <p class="lead">Test your knowledge with our fun and challenging quizzes!</p>
-        <a href="{{ url_for('register') }}" class="btn btn-light btn-lg">Get Started</a>
+        <a href="{{ url_for('quiz') }}" class="btn btn-primary btn-lg">Go to App</a>
     </div>
 </div>
-<div class="container">
+
+<!-- Features Section -->
+<section id="features" class="container my-5">
+    <h2 class="text-center mb-4">Features</h2>
     <div class="row">
-        <div class="col-md-4">
-            <div class="card mb-4">
-                <img src="https://via.placeholder.com/350x150" class="card-img-top" alt="Quiz Image">
-                <div class="card-body">
-                    <h5 class="card-title">Featured Quiz</h5>
-                    <p class="card-text">Check out our featured quiz and test your knowledge.</p>
-                    <a href="{{ url_for('quiz') }}" class="btn btn-primary">Take Quiz</a>
-                </div>
-            </div>
+        <div class="col-md-4 text-center">
+            <img src="{{ url_for('static', filename='images/afroguy.jpg') }}" alt="Feature 1" class="img-fluid mb-3">
+            <h3>Feature 1</h3>
+            <p>Description of feature 1.</p>
         </div>
-        <div class="col-md-4">
-            <div class="card mb-4">
-                <img src="https://via.placeholder.com/350x150" class="card-img-top" alt="Quiz Image">
-                <div class="card-body">
-                    <h5 class="card-title">Popular Quiz</h5>
-                    <p class="card-text">Join others in taking our most popular quiz.</p>
-                    <a href="{{ url_for('quiz') }}" class="btn btn-primary">Take Quiz</a>
-                </div>
-            </div>
+        <div class="col-md-4 text-center">
+            <img src="{{ url_for('static', filename='images/manandwoman.jpg') }}" alt="Feature 2" class="img-fluid mb-3">
+            <h3>Feature 2</h3>
+            <p>Description of feature 2.</p>
         </div>
-        <div class="col-md-4">
-            <div class="card mb-4">
-                <img src="https://via.placeholder.com/350x150" class="card-img-top" alt="Quiz Image">
-                <div class="card-body">
-                    <h5 class="card-title">New Quiz</h5>
-                    <p class="card-text">Try our latest quiz and see how you stack up.</p>
-                    <a href="{{ url_for('quiz') }}" class="btn btn-primary">Take Quiz</a>
-                </div>
-            </div>
+        <div class="col-md-4 text-center">
+            <img src="{{ url_for('static', filename='images/naijaguy.jpg') }}" alt="Feature 3" class="img-fluid mb-3">
+            <h3>Feature 3</h3>
+            <p>Description of feature 3.</p>
         </div>
     </div>
-</div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="container my-5">
+    <h2 class="text-center mb-4">About</h2>
+    <p>This project was inspired by ... (your personal story and timeline).</p>
+    <p>This is a Portfolio Project for Holberton School. <a href="https://holbertonschool.com">Holberton School</a></p>
+    <div class="text-center">
+        <p>Team Members:</p>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="https://www.linkedin.com/in/yourprofile">LinkedIn</a></li>
+            <li class="list-inline-item"><a href="https://github.com/yourprofile">GitHub</a></li>
+            <li class="list-inline-item"><a href="https://twitter.com/yourprofile">Twitter</a></li>
+        </ul>
+        <p>Project Repository: <a href="https://github.com/yourrepository">GitHub Repository</a></p>
+    </div>
+</section>
 {% endblock %}
