@@ -1,3 +1,4 @@
+import random
 from flask import Flask, request, jsonify, render_template, redirect, url_for, session, flash
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -27,6 +28,11 @@ def generate_token(user_id):
         'exp': datetime.datetime.utcnow() + datetime.timedelta(hours=1)
     }
     return jwt.encode(payload, app.secret_key, algorithm='HS256')
+
+@app.template_filter('randomize')
+def randomize_filter(sequence):
+    random.shuffle(sequence)
+    return sequence
 
 @app.route('/')
 def index():
@@ -119,6 +125,15 @@ def submit_quiz():
 
     flash('Quiz submitted successfully!')
     return redirect(url_for('quiz'))
+
+@app.route('/result')
+def result():
+    result = session.get('result')
+    if result:
+        return render_template('result.html', result=result)
+    else:
+        flash('No quiz result available. Please take the quiz first.')
+        return redirect(url_for('quiz'))
 
 if __name__ == '__main__':
     # Ensure the database and tables are created

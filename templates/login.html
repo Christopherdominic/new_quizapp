@@ -4,7 +4,7 @@
 <div class="row justify-content-center">
     <div class="col-md-6">
         <div class="card">
-            <div class="card-body">
+            <div class="card-body text-center"> <!-- Center aligning the content -->
                 <h2 class="card-title">Login</h2>
                 <form action="{{ url_for('login') }}" method="post">
                     <div class="form-group">
@@ -19,9 +19,6 @@
                 </form>
             </div>
         </div>
-    </div>
-    <div class="col-md-6">
-        <img src="https://via.placeholder.com/400x300" class="img-fluid" alt="...">
     </div>
 </div>
 {% endblock %}
