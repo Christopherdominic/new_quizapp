@@ -3,12 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz</title>
+    <title>{{ category }} Quiz</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 20px;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 800px;
+        }
+        .quiz-title {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            background-color: #fff;
+        }
+        .form-check {
+            padding: 10px;
+        }
+        .btn-submit {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <h1 class="mt-5">Quiz</h1>
+        <h1 class="quiz-title">{{ category }} Quiz</h1>
         
         <!-- Display the result if it exists -->
         {% if result %}
@@ -19,14 +46,14 @@
         
         <form method="post" action="{{ url_for('submit_quiz') }}">
             {% for question in questions %}
-            <div class="card my-3">
+            <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">{{ question.question|safe }}</h5>
                     <div class="form-group">
                         {% set options = question.incorrect_answers + [question.correct_answer] %}
                         {% for option in options|randomize %}
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="question{{ loop.index }}" value="{{ option }}">
+                            <input class="form-check-input" type="radio" name="question{{ loop.index }}" id="question{{ loop.index }}" value="{{ option }}">
                             <label class="form-check-label" for="question{{ loop.index }}">{{ option }}</label>
                         </div>
                         {% endfor %}
@@ -34,9 +61,11 @@
                 </div>
             </div>
             {% endfor %}
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary btn-submit">Submit</button>
         </form>
     </div>
+
+    <!-- Bootstrap scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

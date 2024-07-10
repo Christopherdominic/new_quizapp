@@ -20,11 +20,23 @@ footer {
     text-align: center;
     color: white;
     margin-bottom: 40px;
+    overflow: hidden;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #343a40;
 }
 
 .cover-img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 
 .cover-text {
@@ -32,6 +44,18 @@ footer {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 1;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.cover-text h1 {
+    color: red; /* Change the heading text color to red */
+}
+
+.cover-text p {
+    color: yellow; /* Change the paragraph text color to yellow */
 }
 
 #features .img-fluid {
@@ -54,4 +78,11 @@ footer {
 
 .list-inline-item {
     margin: 0 10px;
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+    .cover-img {
+        height: auto;
+    }
 }

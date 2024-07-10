@@ -5,8 +5,8 @@
 <div class="cover text-center">
     <img src="{{ url_for('static', filename='images/quizaster.jpg') }}" alt="Cover Image" class="cover-img">
     <div class="cover-text">
-        <h1 class="display-4">QuizMaster</h1>
-        <p class="lead">Test your knowledge with our fun and challenging quizzes!</p>
+        <h1 class="display-4" style="color: red;">QuizMaster</h1>
+        <p class="lead" style="color: yellow; font-weight: bold; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);">Test your knowledge with our fun and challenging quizzes!</p>
         <a href="{{ url_for('quiz') }}" class="btn btn-primary btn-lg">Go to App</a>
     </div>
 </div>
@@ -18,7 +18,7 @@
         <div class="col-md-4 text-center">
             <img src="{{ url_for('static', filename='images/afroguy.jpg') }}" alt="Feature 1" class="img-fluid mb-3">
             <h3>Dynamic Quiz Selection</h3>
-            <p> Offers a variety of quiz categories and topics for users to choose from. Each category provides a unique set of questions, ensuring diverse and engaging quiz experiences.</p>
+            <p>Offers a variety of quiz categories and topics for users to choose from. Each category provides a unique set of questions, ensuring diverse and engaging quiz experiences.</p>
         </div>
         <div class="col-md-4 text-center">
             <img src="{{ url_for('static', filename='images/manandwoman.jpg') }}" alt="Feature 2" class="img-fluid mb-3">
@@ -33,13 +33,44 @@
     </div>
 </section>
 
+<!-- Quiz Categories Section -->
+<section id="categories" class="container my-5">
+    <h2 class="text-center mb-4">Quiz Categories</h2>
+    <div class="row">
+        <div class="col-md-4 text-center">
+            <div class="card">
+                <div class="card-body">
+                    <h3>General Knowledge</h3>
+                    <a href="{{ url_for('general_knowledge_quiz') }}" class="btn btn-primary">Start Quiz</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 text-center">
+            <div class="card">
+                <div class="card-body">
+                    <h3>Politics</h3>
+                    <a href="{{ url_for('politics_quiz') }}" class="btn btn-primary">Start Quiz</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 text-center">
+            <div class="card">
+                <div class="card-body">
+                    <h3>Sports</h3>
+                    <a href="{{ url_for('sports_quiz') }}" class="btn btn-primary">Start Quiz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- About Section -->
 <section id="about" class="container my-5">
     <h2 class="text-center mb-4">About</h2>
     <p>This project was inspired by my journey and passion for learning through practical applications. As a student at Holberton School, I've embarked on a journey to deepen my understanding of frontend development and software engineering. QuizMaster represents a culmination of my efforts to apply classroom knowledge to real-world projects.</p>
     <p>This is a Portfolio Project for Holberton School. <a href="https://holbertonschool.com">Holberton School</a> where I've been honing my skills in programming, problem-solving, and project management. It serves as a showcase of my ability to conceptualize, design, and implement a functional application that delivers a seamless quiz experience.</p>
     <div class="text-center">
-        <p>Team Members:</p>
+        <p>Team Members</p>
         <ul class="list-inline">
             <li class="list-inline-item"><a href="https://www.linkedin.com/in/christopher-dominic-eze">LinkedIn</a></li>
             <li class="list-inline-item"><a href="https://github.com/Christopherdominic">GitHub</a></li>
